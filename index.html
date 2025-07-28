@@ -183,7 +183,7 @@
         const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbxe6HhzPQBGgD8loHIgbzVyOaWLVRJmCKnyFcUfuyx4s2FB0OjgzbhdNTaoa7QgR6vX/exec"; 
 
         const servicesData = {
-            "Graphic Design": ["Logo Design", "Brochure/Flyer", "Social Media Post", "Business Card", "Banner", "Bunting", "Poster", "Merchandise"],
+            "Graphic Design": ["Logo Design", "Brochure/Flyer", "Social Media Post", "Business Card", "Banner", "Bunting", "Poster", "Merchandise", "Company Profile"],
             "Video Shoot & Editing": ["Corporate Video", "Event Coverage", "Product Video", "Social Media Clip"],
             "Website Development": ["Landing Page", "E-commerce Store", "Corporate Site", "Portfolio Site"],
             "SEO": ["On-Page SEO", "Off-Page SEO", "Technical Audit", "Keyword Research"],
@@ -260,16 +260,10 @@
 
         function formatDeadline(dateString) {
             if (!dateString) return 'N/A';
-            
-            // Create a new Date object. This is more robust and handles
-            // various date string formats that might come from the sheet.
             const date = new Date(dateString);
-
-            // Check if the created date is valid. If not, return 'N/A'.
             if (isNaN(date.getTime())) {
                 return 'N/A';
             }
-            
             const formattedDay = String(date.getUTCDate()).padStart(2, '0');
             const formattedMonth = String(date.getUTCMonth() + 1).padStart(2, '0');
             const formattedYear = String(date.getUTCFullYear()).slice(-2);
